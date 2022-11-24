@@ -11,7 +11,6 @@ import {
   AppWidget,
   AppWelcome,
   AppFeatured,
-  AppNewInvoice,
   AppTopAuthors,
   AppTopRelated,
   AppAreaInstalled,
@@ -75,10 +74,6 @@ export default function GeneralApp() {
 
           <Grid item xs={12} md={6} lg={8}>
             <AppAreaInstalled />
-          </Grid>
-
-          <Grid item xs={12} lg={8}>
-            <AppNewInvoice />
           </Grid>
 
           <Grid item xs={12} md={6} lg={4}>

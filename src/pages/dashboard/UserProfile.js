@@ -60,11 +60,6 @@ export default function UserProfile() {
 
   const PROFILE_TABS = [
     {
-      value: 'profile',
-      icon: <Iconify icon={'ic:round-account-box'} width={20} height={20} />,
-      component: <Profile myProfile={_userAbout} posts={_userFeeds} />,
-    },
-    {
       value: 'followers',
       icon: <Iconify icon={'eva:heart-fill'} width={20} height={20} />,
       component: <ProfileFollowers followers={_userFollowers} />,
