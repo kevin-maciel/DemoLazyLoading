@@ -1,7 +1,6 @@
 import { Suspense, lazy } from 'react';
 import { Navigate, useRoutes, useLocation } from 'react-router-dom';
 // layouts
-import MainLayout from '../layouts/main';
 import DashboardLayout from '../layouts/dashboard';
 import LogoOnlyLayout from '../layouts/LogoOnlyLayout';
 // guards
@@ -66,10 +65,6 @@ export default function Router() {
         { element: <Navigate to={PATH_AFTER_LOGIN} replace />, index: true },
         { path: 'app', element: <GeneralApp /> },
         { path: 'ecommerce', element: <GeneralEcommerce /> },
-        { path: 'analytics', element: <GeneralAnalytics /> },
-        { path: 'banking', element: <GeneralBanking /> },
-        { path: 'booking', element: <GeneralBooking /> },
-
         {
           path: 'e-commerce',
           children: [
@@ -146,7 +141,7 @@ export default function Router() {
         { element: <HomePage />, index: true },
       ],
     }, */
-    { path: '/', element: <Login /> }, //Login provisorio hasta que funcione el menu
+    { path: '/', element: <Login /> }, /* Login provisorio hasta que funcione el menu */
     { path: '*', element: <Navigate to="/404" replace /> },
   ]);
 }
@@ -161,9 +156,7 @@ const VerifyCode = Loadable(lazy(() => import('../pages/auth/VerifyCode')));
 // Dashboard
 const GeneralApp = Loadable(lazy(() => import('../pages/dashboard/GeneralApp')));
 const GeneralEcommerce = Loadable(lazy(() => import('../pages/dashboard/GeneralEcommerce')));
-const GeneralAnalytics = Loadable(lazy(() => import('../pages/dashboard/GeneralAnalytics')));
-const GeneralBanking = Loadable(lazy(() => import('../pages/dashboard/GeneralBanking')));
-const GeneralBooking = Loadable(lazy(() => import('../pages/dashboard/GeneralBooking')));
+
 const EcommerceShop = Loadable(lazy(() => import('../pages/dashboard/EcommerceShop')));
 const EcommerceProductDetails = Loadable(lazy(() => import('../pages/dashboard/EcommerceProductDetails')));
 const EcommerceProductList = Loadable(lazy(() => import('../pages/dashboard/EcommerceProductList')));
@@ -183,7 +176,6 @@ const Mail = Loadable(lazy(() => import('../pages/dashboard/Mail')));
 const Calendar = Loadable(lazy(() => import('../pages/dashboard/Calendar')));
 const Kanban = Loadable(lazy(() => import('../pages/dashboard/Kanban')));
 // Main
-const HomePage = Loadable(lazy(() => import('../pages/Home')));
 const ComingSoon = Loadable(lazy(() => import('../pages/ComingSoon')));
 const Maintenance = Loadable(lazy(() => import('../pages/Maintenance')));
 const Page500 = Loadable(lazy(() => import('../pages/Page500')));

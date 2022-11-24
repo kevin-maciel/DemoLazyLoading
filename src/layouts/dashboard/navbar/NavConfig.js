@@ -15,12 +15,9 @@ const ICONS = {
   mail: getIcon('ic_mail'),
   user: getIcon('ic_user'),
   kanban: getIcon('ic_kanban'),
-  banking: getIcon('ic_banking'),
   calendar: getIcon('ic_calendar'),
   ecommerce: getIcon('ic_ecommerce'),
-  analytics: getIcon('ic_analytics'),
   dashboard: getIcon('ic_dashboard'),
-  booking: getIcon('ic_booking'),
 };
 
 const navConfig = [
@@ -31,9 +28,6 @@ const navConfig = [
     items: [
       { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
       { title: 'e-commerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
-      { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
-      { title: 'banking', path: PATH_DASHBOARD.general.banking, icon: ICONS.banking },
-      { title: 'booking', path: PATH_DASHBOARD.general.booking, icon: ICONS.booking },
     ],
   },
 
