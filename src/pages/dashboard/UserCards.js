@@ -8,7 +8,6 @@ import useSettings from '../../hooks/useSettings';
 import { _userCards } from '../../_mock';
 // components
 import Page from '../../components/Page';
-import HeaderBreadcrumbs from '../../components/HeaderBreadcrumbs';
 // sections
 import { UserCard } from '../../sections/@dashboard/user/cards';
 
@@ -20,15 +19,6 @@ export default function UserCards() {
   return (
     <Page title="User: Cards">
       <Container maxWidth={themeStretch ? false : 'lg'}>
-        <HeaderBreadcrumbs
-          heading="User Cards"
-          links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'User', href: PATH_DASHBOARD.user.root },
-            { name: 'Cards' },
-          ]}
-        />
-
         <Box
           sx={{
             display: 'grid',
