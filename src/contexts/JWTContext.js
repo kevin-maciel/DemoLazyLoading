@@ -109,11 +109,17 @@ function AuthProvider({ children }) {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post('/api/account/login', {
+   /*  const response = await axios.post('/api/account/login', {
       email,
       password,
     });
-    const { accessToken, user } = response.data;
+    const { accessToken, user } = response.data; */
+
+    const accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW9AbWluaW1hbHMuY2MiLCJwYXNzd29yZCI6ImRlbW8xMjM0IiwiZmlyc3ROYW1lIjoiS2V2aW4iLCJsYXN0TmFtZSI6Ik1hY2llbCJ9.B5-7ogRknj3vREWYTrNUqZLBnu-4Z9ryDwsFEnBucHo";
+    const user = {email: "demo@minimals.cc",
+      password: "demo1234",
+      firstName: "Kevin",
+      lastName: "Maciel",};
 
     setSession(accessToken);
     dispatch({

@@ -1,18 +1,8 @@
-import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
-import { Box } from '@mui/material';
-// ----------------------------------------------------------------------
-
-Logo.propTypes = {
-  disabledLink: PropTypes.bool,
-  sx: PropTypes.object,
-};
-
-export default function Logo({ disabledLink = false, sx }) {
-
-  const logo = (
-    <Box sx={{ width: 40, height: 40, ...sx }}>
-     <svg style={{width:"50px"}} version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 865.000000 858.000000"
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+ "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="865.000000pt" height="858.000000pt" viewBox="0 0 865.000000 858.000000"
  preserveAspectRatio="xMidYMid meet">
 
 <g transform="translate(0.000000,858.000000) scale(0.100000,-0.100000)"
@@ -60,14 +50,3 @@ c196 0 216 -2 246 -20z"/>
 106 2 113 8 20 483 19 532 -2z"/>
 </g>
 </svg>
-
-       </Box>
-
-  );
-
-  if (disabledLink) {
-    return <>{logo}</>;
-  }
-
-  return <RouterLink to="/">{logo}</RouterLink>;
-}
