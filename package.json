@@ -61,6 +61,8 @@
     "d3-scale": "^4.0.2",
     "date-fns": "^2.24.0",
     "deck.gl": "^8.6.5",
+    "devextreme": "22.1.6",
+    "devextreme-react": "22.1.6",
     "emoji-mart": "^3.0.0",
     "firebase": "^9.6.1",
     "framer-motion": "^4.1.17",

@@ -20,26 +20,24 @@ const navConfig = [
   // ----------------------------------------------------------------------
   {
     subheader: 'general',
-    items: [
-      { title: 'app', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard },
-    ],
+    items: [{ title: 'Tendencias', path: PATH_DASHBOARD.general.app, icon: ICONS.dashboard }],
   },
 
   // MANAGEMENT
   // ----------------------------------------------------------------------
   {
-    subheader: 'management',
+    subheader: 'Edificio 1',
     items: [
       // MANAGEMENT : USER
       {
-        title: 'user',
+        title: 'Edificio 1',
         path: PATH_DASHBOARD.user.root,
         icon: ICONS.user,
         children: [
-          { title: 'profile', path: PATH_DASHBOARD.user.profile },
-          { title: 'cards', path: PATH_DASHBOARD.user.cards },
-          { title: 'list', path: PATH_DASHBOARD.user.list },
-          { title: 'create', path: PATH_DASHBOARD.user.newUser },
+          { title: 'Linea 1', path: PATH_DASHBOARD.user.profile },
+          { title: 'Linea 2', path: PATH_DASHBOARD.user.cards },
+          { title: 'Linea 5', path: PATH_DASHBOARD.user.list },
+          { title: 'Linea 7', path: PATH_DASHBOARD.user.newUser },
         ],
       },
     ],

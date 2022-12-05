@@ -1,62 +1,66 @@
-import PropTypes from 'prop-types';
-import { Link as RouterLink } from 'react-router-dom';
-// @mui
-import { styled } from '@mui/material/styles';
-import { Typography, Button, Card, CardContent } from '@mui/material';
-import { SeoIllustration } from '../../../../assets';
+import React from 'react';
+import SelectBox from 'devextreme-react/select-box';
+import {
+  Chart,
+  Series,
+  ArgumentAxis,
+  CommonSeriesSettings,
+  Export,
+  Legend,
+  Margin,
+  Title,
+  Subtitle,
+  Tooltip,
+  Grid,
+} from 'devextreme-react/chart';
+import service from './data';
 
-// ----------------------------------------------------------------------
+const countriesInfo = service.getCountriesInfo();
+const energySources = service.getEnergySources();
+const types = ['line', 'stackedline', 'fullstackedline'];
 
-const RootStyle = styled(Card)(({ theme }) => ({
-  boxShadow: 'none',
-  textAlign: 'center',
-  backgroundColor: theme.palette.primary.lighter,
-  [theme.breakpoints.up('md')]: {
-    height: '100%',
-    display: 'flex',
-    textAlign: 'left',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-}));
+class AppWelcome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: 'line',
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-// ----------------------------------------------------------------------
+  handleChange(e) {
+    this.setState({ type: e.value });
+  }
 
-AppWelcome.propTypes = {
-  displayName: PropTypes.string,
-};
-
-export default function AppWelcome({ displayName }) {
-  return (
-    <RootStyle>
-      <CardContent
-        sx={{
-          p: { md: 0 },
-          pl: { md: 5 },
-          color: 'grey.800',
-        }}
-      >
-        <Typography gutterBottom variant="h4">
-          Welcome back,
-          <br /> {!displayName ? '...' : displayName}!
-        </Typography>
-
-        <Typography variant="body2" sx={{ pb: { xs: 3, xl: 5 }, maxWidth: 480, mx: 'auto' }}>
-          If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
-        </Typography>
-
-        <Button variant="contained" to="#" component={RouterLink}>
-          Go Now
-        </Button>
-      </CardContent>
-
-      <SeoIllustration
-        sx={{
-          p: 3,
-          width: 360,
-          margin: { xs: 'auto', md: 'inherit' },
-        }}
-      />
-    </RootStyle>
-  );
+  render() {
+    return (
+      <>
+        <Chart palette="Violet" dataSource={countriesInfo}>
+          <CommonSeriesSettings argumentField="country" type={this.state.type} />
+          {energySources.map((item) => (
+            <Series key={item.value} valueField={item.value} name={item.name} />
+          ))}
+          <Margin bottom={20} />
+          <ArgumentAxis valueMarginsEnabled={false} discreteAxisDivisionMode="crossLabels">
+            <Grid visible />
+          </ArgumentAxis>
+          <Legend verticalAlignment="bottom" horizontalAlignment="center" itemTextPosition="bottom" />
+          <Export enabled />
+          <Title text="Energy Consumption in 2004">
+            <Subtitle text="(Millions of Tons, Oil Equivalent)" />
+          </Title>
+          <Tooltip enabled />
+        </Chart>
+        <div className="options">
+          <div className="caption">Options</div>
+          <div className="option">
+            <span>Series Type </span>
+            <SelectBox dataSource={types} value={this.state.type} onValueChanged={this.handleChange} />
+          </div>
+        </div>
+      </>
+    );
+  }
 }
+
+export default AppWelcome;

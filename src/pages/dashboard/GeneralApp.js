@@ -5,9 +5,7 @@ import useSettings from '../../hooks/useSettings';
 // components
 import Page from '../../components/Page';
 // sections
-import {
-  AppWelcome,
-} from '../../sections/@dashboard/general/app';
+import { AppWelcome } from '../../sections/@dashboard/general/app';
 
 // ----------------------------------------------------------------------
 
@@ -16,13 +14,12 @@ export default function GeneralApp() {
   const { themeStretch } = useSettings();
 
   return (
-    <Page title="General: App">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
+    <Page title="Tendencias">
+      <Container maxWidth={themeStretch ? false : 'lg'}>
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
             <AppWelcome displayName={user?.displayName} />
           </Grid>
-
         </Grid>
       </Container>
     </Page>
