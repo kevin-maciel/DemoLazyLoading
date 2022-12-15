@@ -1,4 +1,6 @@
 // routes
+import BusinessIcon from '@mui/icons-material/Business';
+import BarChartIcon from '@mui/icons-material/BarChart';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // components
 import Label from '../../../components/Label';
@@ -13,6 +15,8 @@ const ICONS = {
   mail: getIcon('ic_mail'),
   user: getIcon('ic_user'),
   dashboard: getIcon('ic_dashboard'),
+  edificio: <BusinessIcon />,
+  tendencia: <BarChartIcon />,
 };
 
 const navConfig = [
@@ -32,7 +36,7 @@ const navConfig = [
       {
         title: 'Edificio 1',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: <BusinessIcon />,
         children: [
           { title: 'Linea 1', path: PATH_DASHBOARD.user.profile },
           { title: 'Linea 2', path: PATH_DASHBOARD.user.cards },
