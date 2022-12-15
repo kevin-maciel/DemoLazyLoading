@@ -28,14 +28,15 @@ export default function UserProfile() {
                 variant="standard"
                 InputProps={{
                   readOnly: true,
-                  width: '340pc',
                 }}
                 focused
                 margin="normal"
+                style={{ minWidth: '300px' }}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
+                style={{ minWidth: '300px' }}
                 label="Lote"
                 id="standard-size-normal"
                 defaultValue="ARE495"
@@ -49,6 +50,7 @@ export default function UserProfile() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                style={{ minWidth: '300px' }}
                 label="Hora de Inicio"
                 id="standard-size-normal"
                 defaultValue="14/03/2014 11:23:19"
@@ -62,6 +64,7 @@ export default function UserProfile() {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                style={{ minWidth: '300px' }}
                 label="Minutos en Marcha"
                 id="standard-size-normal"
                 defaultValue="186"
@@ -79,6 +82,7 @@ export default function UserProfile() {
             <Grid container direction="column" justifyContent="center" alignItems="center" xs={6} md={6} lg={6} xl={6}>
               <Grid item xs={12}>
                 <TextField
+                  style={{ minWidth: '300px' }}
                   label="Estuches/min"
                   id="standard-size-normal"
                   defaultValue="0"
@@ -92,6 +96,7 @@ export default function UserProfile() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  style={{ minWidth: '300px' }}
                   label="Estuches consumidos"
                   id="standard-size-normal"
                   defaultValue="54395"
@@ -105,6 +110,7 @@ export default function UserProfile() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  style={{ minWidth: '300px' }}
                   label="Estruches producidos"
                   id="standard-size-normal"
                   defaultValue="54000"
@@ -118,6 +124,7 @@ export default function UserProfile() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  style={{ minWidth: '300px' }}
                   label="Cant. de Bultos"
                   id="standard-size-normal"
                   defaultValue="669"
@@ -131,6 +138,7 @@ export default function UserProfile() {
               </Grid>
               <Grid item xs={12}>
                 <TextField
+                  style={{ minWidth: '300px' }}
                   label="Cant. de Paletas"
                   id="standard-size-normal"
                   defaultValue="5"
